@@ -7,13 +7,16 @@ type Props = { // use type while building applications and interface while using
 }
 
 const Greet = (props: Props) => {
+
+  const {messageCount = 0} = props
+
   console.log('rendered');
   
   return (
     <h2>
     {
       props.isLoggedIn ? 
-      `Welcome ${props.name}!! You have ${props.messageCount ? props.messageCount : 0} unread messages`
+      `Welcome ${props.name}!! You have ${messageCount} unread messages`
       : 'Welcome Guest'
     }
     </h2>

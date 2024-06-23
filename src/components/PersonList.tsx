@@ -1,11 +1,17 @@
 import { memo } from "react"
+import { Name } from "./Person.types"
 
+// First Method
+// type PersonList = {
+//     names: {
+//         first: string,
+//         last: string
+//     }[]
+// }
 
+// Second Method 
 type PersonList = {
-    names: {
-        first: string,
-        last: string
-    }[]
+    names: Name[] // using Name from import
 }
 
 const PersonList = (props: PersonList) => {
