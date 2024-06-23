@@ -12,6 +12,8 @@ import Container from './components/Container'
 import AuthUser from './components/state/AuthUser'
 import AuthUser2 from './components/state/AuthUser2'
 import CounterReducer from './components/CounterReducer'
+import Private from './components/auth/Private'
+import Profile from './components/auth/Profile'
 
 function App() {
   const personName = {
@@ -67,6 +69,7 @@ function App() {
      {/*10*/} <AuthUser /> {/* UseState - future option -- more than two like string and null both that will change in future */}
      {/*11*/} <AuthUser2 /> {/* UseState - type assertion - like we initialize the value in beginning and it always be like it */}
      {/*12*/} <CounterReducer /> {/* UseState - type assertion - like we initialize the value in beginning and it always be like it */}
+     {/*12*/} <Private isLoggedIn={true} component={Profile} /> {/* Private Component - used for authentication in typescript React.ComponentType */}
     </>
   )
 }
