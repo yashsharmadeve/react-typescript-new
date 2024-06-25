@@ -14,6 +14,13 @@ import AuthUser2 from './components/state/AuthUser2'
 import CounterReducer from './components/CounterReducer'
 import Private from './components/auth/Private'
 import Profile from './components/auth/Profile'
+import List from './components/generics/List'
+import RandomNumber from './components/restriction/RandomNumber'
+import Toast from './components/templateliterals/Toast'
+import CustomButton from './components/html/Button'
+import CustomInput from './components/html/Input'
+import CustomComponent from './components/html/CustomComponent'
+import Text from './components/polymorphic/Text'
 
 function App() {
   const personName = {
@@ -69,7 +76,16 @@ function App() {
      {/*10*/} <AuthUser /> {/* UseState - future option -- more than two like string and null both that will change in future */}
      {/*11*/} <AuthUser2 /> {/* UseState - type assertion - like we initialize the value in beginning and it always be like it */}
      {/*12*/} <CounterReducer /> {/* UseState - type assertion - like we initialize the value in beginning and it always be like it */}
-     {/*12*/} <Private isLoggedIn={true} component={Profile} /> {/* Private Component - used for authentication in typescript React.ComponentType */}
+     {/*13*/} <Private isLoggedIn={true} component={Profile} /> {/* Private Component - used for authentication in typescript React.ComponentType */}
+     {/*14*/} <List items={nameList} onClick={(item)=>console.log(item)} /> {/* generics - means extends can take any type of datatype */}
+     {/*15*/} <RandomNumber value={10} isPositive /> {/* Restricted Props - means make conditional */}
+     {/*16*/} <Toast position='center' /> {/* Template Literals to many props as one and show as value and Exclude to make many as one */}
+     {/*17*/} <CustomButton variant='primary' onClick={()=>console.log('clicked')}>My Button</CustomButton> {/* Wrapping HTML Element - use to pass Component Props so that we don't have to configure every props - used Omit, React.ComponentProps<''> */}
+     {/*18*/} <CustomInput type='text' onChange={(e)=>console.log(e.target.value)} /> {/* Wrapping HTML Element - use to pass Component Props so that we don't have to configure every props */}
+     {/*19*/} <CustomComponent isLoggedIn name='Yash' /> {/* Using React.ComponentProps<typeof otherComponent> - using this we can use the propTypes of other element */}
+     {/*20*/} <Text as='h1' size='lg'>Label</Text> {/* Use Html element - with html element and their attribute */}
+     {/*20*/} <Text as='p' size='md'>Label</Text> {/* Using React.ComponentProps<typeof otherComponent> - using this we can use the propTypes of other element */}
+     {/*20*/} <Text as='label' htmlFor='yash' size='sm' color='primary'>Label</Text> {/* Using React.ComponentProps<typeof otherComponent> - using this we can use the propTypes of other element */}
     </>
   )
 }

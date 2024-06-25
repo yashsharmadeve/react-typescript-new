@@ -12,5 +12,5 @@ export type Name = { // we can use it anywhere used - Person and PersonList
 }
 
 export type PersonProp = {
-    name: Name
+    name: Name | {}
 }
